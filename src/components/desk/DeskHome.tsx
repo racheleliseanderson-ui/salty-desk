@@ -4,10 +4,11 @@ import {
   Lock,
   Map,
   ShieldCheck,
-  Sparkles,
   UtensilsCrossed,
 } from "lucide-react";
 import { AppCard } from "@/components/desk/AppCard";
+import { DeskAside } from "@/components/desk/DeskAside";
+import { HERO } from "@/data/media";
 import {
   APPS,
   BOUNDARY,
@@ -22,83 +23,79 @@ import {
 export function DeskHome() {
   return (
     <main className="hero-wash">
-      {/* Hero */}
       <section className="mx-auto max-w-6xl px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="space-y-6">
-            <div className="inline-flex items-center rounded-full border border-champagne/30 bg-champagne/15 px-2.5 py-0.5 text-xs font-medium tracking-wide text-champagne-soft">
-              {STOREFRONT.tagline}
+            <div className="fleet-enter fleet-enter-d1">
+              <div className="inline-flex items-center rounded-full border border-champagne/30 bg-champagne/15 px-2.5 py-0.5 text-xs font-medium tracking-wide text-champagne-soft fleet-sheen">
+                {STOREFRONT.tagline}
+              </div>
             </div>
-            <h1 className="font-display text-4xl font-medium tracking-tight text-fg sm:text-5xl lg:text-[3.25rem]">
+            <h1 className="fleet-enter fleet-enter-d2 font-display text-4xl font-medium tracking-tight text-fg sm:text-5xl lg:text-[3.25rem]">
               {STOREFRONT.name}
             </h1>
-            <p className="max-w-xl text-base leading-relaxed text-fg-muted sm:text-lg">
+            <p className="fleet-enter fleet-enter-d3 max-w-xl text-base leading-relaxed text-fg-muted sm:text-lg">
               {STOREFRONT.description}
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="fleet-enter fleet-enter-d4 flex flex-wrap gap-3">
               <Link
                 to="/host-path"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-sm)] bg-bordeaux px-7 text-base font-medium text-ivory transition-colors hover:bg-bordeaux-hover"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-sm)] bg-bordeaux px-7 text-base font-medium text-ivory transition-colors hover:bg-bordeaux-hover"
               >
                 Start Host Path
-                <ArrowRight className="size-4" aria-hidden />
+                <ArrowRight className="size-4 fleet-arrow-right" aria-hidden />
               </Link>
               <Link
                 to="/handoffs"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-sm)] border border-border-strong bg-transparent px-7 text-base font-medium text-fg transition-colors hover:bg-surface-2"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-sm)] border border-border-strong bg-transparent px-7 text-base font-medium text-fg transition-colors hover:bg-surface-2"
               >
-                <Map className="size-4" aria-hidden />
+                <Map className="size-4 fleet-mark" aria-hidden />
                 Handoff map
               </Link>
             </div>
-            <p className="text-xs text-fg-subtle">{STOREFRONT.constraints}</p>
+            <div className="fleet-enter fleet-enter-d5 space-y-2">
+              <DeskAside />
+              <p className="text-xs text-fg-subtle">{STOREFRONT.constraints}</p>
+            </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[var(--radius-2xl)] border border-border shadow-panel">
-            <div className="aspect-[4/3] bg-gradient-to-br from-heritage via-ink-deep to-burnished p-6 sm:p-8">
-              <div className="flex h-full flex-col justify-between">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-champagne">
-                    <Sparkles className="size-3.5" aria-hidden />
-                    {STOREFRONT.attitude}
-                  </span>
-                  <span className="font-mono text-[11px] text-fg-subtle">FLEET · 3</span>
-                </div>
-                <div>
-                  <p className="font-display text-2xl font-medium text-ivory sm:text-3xl">
-                    Sharp tools for the night you meant to host — not the one that owns you.
-                  </p>
-                  <p className="mt-3 max-w-md text-sm leading-relaxed text-fg-muted">
-                    Same intelligence depth on every card. Same population honesty. Same
-                    explicit handoffs. No vanity without structure; no vice without a plan.
-                  </p>
-                </div>
-                <div className="grid grid-cols-3 gap-2">
-                  {FLEET_STATS.slice(0, 3).map((s) => (
-                    <div
-                      key={s.label}
-                      className="rounded-[var(--radius-md)] border border-white/10 bg-black/20 px-2.5 py-2 backdrop-blur-sm"
-                    >
-                      <p className="font-mono text-sm font-medium text-ivory">{s.value}</p>
-                      <p className="text-[10px] uppercase tracking-wider text-fg-subtle">
-                        {s.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+          <div className="fleet-enter fleet-enter-d3 fleet-hero-media relative overflow-hidden rounded-[var(--radius-2xl)] border border-border shadow-panel">
+            <img
+              src={HERO.url}
+              alt={HERO.alt}
+              className="aspect-[4/3] w-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/85 via-ink-deep/20 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+              <p className="font-display text-xl font-medium text-ivory sm:text-2xl">
+                Sharp tools for the night you meant to host — not the one that owns you.
+              </p>
+              <div className="mt-4 grid grid-cols-3 gap-2">
+                {FLEET_STATS.slice(0, 3).map((s) => (
+                  <div
+                    key={s.label}
+                    className="rounded-[var(--radius-md)] border border-white/10 bg-black/35 px-2.5 py-2 backdrop-blur-sm"
+                  >
+                    <p className="font-mono text-sm font-medium text-ivory">{s.value}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-fg-subtle">
+                      {s.label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Suites + app cards */}
       <section className="mx-auto max-w-6xl space-y-14 px-4 pb-16 sm:px-6">
         {SUITES.map((suite) => {
           const apps = APPS.filter((a) => a.suite === suite.id);
           return (
             <div key={suite.id} className="space-y-4">
-              <div className="flex items-end justify-between gap-4">
+              <div className="fleet-enter fleet-enter-d2 flex items-end justify-between gap-4">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-bordeaux-soft">
                     {suite.label}
@@ -108,10 +105,7 @@ export function DeskHome() {
                   </h2>
                 </div>
                 {suite.id === "host" ? (
-                  <UtensilsCrossed
-                    className="hidden size-8 text-fg-subtle sm:block"
-                    aria-hidden
-                  />
+                  <UtensilsCrossed className="hidden size-8 text-fg-subtle sm:block" aria-hidden />
                 ) : (
                   <Map className="hidden size-8 text-fg-subtle sm:block" aria-hidden />
                 )}
@@ -120,8 +114,8 @@ export function DeskHome() {
               <div
                 className={
                   apps.length === 1
-                    ? "grid gap-4 lg:grid-cols-1 lg:max-w-2xl"
-                    : "grid gap-4 sm:grid-cols-2"
+                    ? "fleet-stagger grid gap-4 lg:max-w-2xl lg:grid-cols-1"
+                    : "fleet-stagger grid gap-4 sm:grid-cols-2"
                 }
               >
                 {apps.map((app) => (
@@ -132,7 +126,6 @@ export function DeskHome() {
           );
         })}
 
-        {/* Guided path */}
         <div className="rounded-[var(--radius-2xl)] border border-border bg-surface p-6 sm:p-8">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
@@ -149,19 +142,19 @@ export function DeskHome() {
             </div>
             <Link
               to="/host-path"
-              className="inline-flex h-10 items-center gap-2 rounded-[var(--radius-sm)] bg-champagne px-4 text-sm font-medium text-ink-deep hover:bg-champagne-soft"
+              className="group inline-flex h-10 items-center gap-2 rounded-[var(--radius-sm)] bg-champagne px-4 text-sm font-medium text-ink-deep hover:bg-champagne-soft"
             >
               Open Host Path
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4 fleet-arrow-right" />
             </Link>
           </div>
-          <ol className="mt-8 grid gap-4 sm:grid-cols-3">
+          <ol className="fleet-stagger mt-8 grid gap-4 sm:grid-cols-3">
             {HOST_PATH.map((step) => {
               const app = appById(step.appId);
               return (
                 <li
                   key={step.step}
-                  className="rounded-[var(--radius-lg)] border border-border bg-bg/40 p-4"
+                  className="fleet-step rounded-[var(--radius-lg)] border border-border bg-bg/40 p-4"
                 >
                   <p className="font-mono text-xs text-bordeaux-soft">
                     {step.step}. {app?.code}
@@ -175,7 +168,6 @@ export function DeskHome() {
           </ol>
         </div>
 
-        {/* Intelligence surface */}
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-[var(--radius-2xl)] border border-border bg-surface p-6">
             <p className="text-xs font-medium uppercase tracking-wider text-bordeaux-soft">
@@ -224,7 +216,7 @@ export function DeskHome() {
               {HANDOFFS.map((h) => (
                 <li
                   key={`${h.fromCode}-${h.toCode}`}
-                  className="rounded-[var(--radius-md)] border border-border bg-bg/40 px-3 py-2.5 text-sm"
+                  className="rounded-[var(--radius-md)] border border-border bg-bg/40 px-3 py-2.5 text-sm transition-colors hover:border-[color-mix(in_oklab,var(--color-champagne)_35%,var(--color-border))]"
                 >
                   <p className="font-medium text-fg">
                     {h.from}{" "}
@@ -249,7 +241,6 @@ export function DeskHome() {
           </div>
         </div>
 
-        {/* Privacy */}
         <div className="rounded-[var(--radius-2xl)] border border-border bg-surface p-6 sm:p-8">
           <div className="flex items-start gap-4">
             <div className="flex size-11 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-bordeaux/20 text-bordeaux-soft ring-1 ring-bordeaux/30">
