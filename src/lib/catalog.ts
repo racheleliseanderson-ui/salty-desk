@@ -1,5 +1,11 @@
 /** Canonical Salty & Clever fleet catalog — storefront source of truth. */
 
+import {
+  CARD_MENU_BUILDER,
+  CARD_OCCASION_OS,
+  CARD_RESTAURANT_INTELLIGENCE,
+} from "@/data/media";
+
 export const STOREFRONT = {
   name: "Salty Desk",
   brand: "Salty & Clever",
@@ -30,6 +36,8 @@ export type AppCard = {
   href: string;
   detailsPath: string;
   handoffContract?: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export const APPS: AppCard[] = [
@@ -68,6 +76,8 @@ export const APPS: AppCard[] = [
     href: "https://salty-menu-builder.vercel.app/",
     detailsPath: "/#app-menu-builder",
     handoffContract: "SC-MB-001 → SC-OOS-001@1.1.0",
+    image: CARD_MENU_BUILDER.url,
+    imageAlt: CARD_MENU_BUILDER.alt,
   },
   {
     id: "occasion-os",
@@ -104,6 +114,8 @@ export const APPS: AppCard[] = [
     href: "https://occasion-operating-system-u9cd.vercel.app/plan",
     detailsPath: "/#app-occasion-os",
     handoffContract: "SC-OOS-001 receives SC-MB-001@1.1.0",
+    image: CARD_OCCASION_OS.url,
+    imageAlt: CARD_OCCASION_OS.alt,
   },
   {
     id: "restaurant-intelligence",
@@ -139,6 +151,8 @@ export const APPS: AppCard[] = [
     ],
     href: "https://restaurant-intelligence-hub.vercel.app/",
     detailsPath: "/#app-restaurant-intelligence",
+    image: CARD_RESTAURANT_INTELLIGENCE.url,
+    imageAlt: CARD_RESTAURANT_INTELLIGENCE.alt,
   },
 ];
 
