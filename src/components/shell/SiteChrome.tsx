@@ -19,7 +19,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link to="/" className="group flex min-w-0 items-center gap-2.5">
-          <span className="flex size-8 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-bordeaux/20 text-bordeaux-soft ring-1 ring-bordeaux/30">
+          <span className="fleet-mark flex size-8 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-bordeaux/20 text-bordeaux-soft ring-1 ring-bordeaux/30">
             <Wine className="size-4" aria-hidden />
           </span>
           <span className="min-w-0">
@@ -65,10 +65,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <nav
-          className="border-t border-border bg-bg px-4 py-3 md:hidden"
-          aria-label="Mobile"
-        >
+        <nav className="border-t border-border bg-bg px-4 py-3 md:hidden" aria-label="Mobile">
           <ul className="flex flex-col gap-1">
             {NAV.map((item) => (
               <li key={item.to}>
@@ -122,87 +119,29 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm">
           <div className="flex flex-col gap-2">
-            <span className="text-xs font-medium uppercase tracking-wider text-fg-subtle">
-              Suite
-            </span>
-            <Link to="/host-path" className="text-fg-muted hover:text-fg">
-              Host Path
-            </Link>
-            <Link to="/handoffs" className="text-fg-muted hover:text-fg">
-              Handoffs
-            </Link>
-            <Link to="/intelligence" className="text-fg-muted hover:text-fg">
-              Intelligence
-            </Link>
+            <span className="text-xs font-medium uppercase tracking-wider text-fg-subtle">Suite</span>
+            <Link to="/host-path" className="text-fg-muted hover:text-fg">Host Path</Link>
+            <Link to="/handoffs" className="text-fg-muted hover:text-fg">Handoffs</Link>
+            <Link to="/intelligence" className="text-fg-muted hover:text-fg">Intelligence</Link>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-xs font-medium uppercase tracking-wider text-fg-subtle">
-              Legal
-            </span>
-            <a
-              href={`${STOREFRONT.blog}/privacy/`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fg-muted hover:text-fg"
-            >
-              Privacy
-            </a>
-            <a
-              href={`${STOREFRONT.blog}/terms/`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fg-muted hover:text-fg"
-            >
-              Terms
-            </a>
-            <a
-              href={`${STOREFRONT.blog}/accessibility/`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fg-muted hover:text-fg"
-            >
-              Accessibility
-            </a>
-            <Link to="/privacy" className="text-fg-muted hover:text-fg">
-              App privacy boundary
-            </Link>
+            <span className="text-xs font-medium uppercase tracking-wider text-fg-subtle">Legal</span>
+            <a href={`${STOREFRONT.blog}/privacy/`} target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Privacy</a>
+            <a href={`${STOREFRONT.blog}/terms/`} target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Terms</a>
+            <a href={`${STOREFRONT.blog}/accessibility/`} target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Accessibility</a>
+            <Link to="/privacy" className="text-fg-muted hover:text-fg">App privacy boundary</Link>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-xs font-medium uppercase tracking-wider text-fg-subtle">
-              Apps
-            </span>
-            <a
-              href="https://salty-menu-builder.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fg-muted hover:text-fg"
-            >
-              Menu Builder
-            </a>
-            <a
-              href="https://occasion-operating-system-u9cd.vercel.app/plan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fg-muted hover:text-fg"
-            >
-              Occasion OS
-            </a>
-            <a
-              href="https://restaurant-intelligence-hub.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-fg-muted hover:text-fg"
-            >
-              Restaurant Intelligence
-            </a>
+            <span className="text-xs font-medium uppercase tracking-wider text-fg-subtle">Apps</span>
+            <a href="https://salty-menu-builder.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Menu Builder</a>
+            <a href="https://occasion-operating-system-u9cd.vercel.app/plan" target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Occasion OS</a>
+            <a href="https://restaurant-intelligence-hub.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Restaurant Intelligence</a>
           </div>
         </div>
       </div>
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-fg-subtle sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <span>
-            Education only · {STOREFRONT.brand} · {STOREFRONT.attitude}
-          </span>
+          <span>Education only · {STOREFRONT.brand} · {STOREFRONT.attitude}</span>
           <span>TanStack Start · Nitro Fluid · Vercel</span>
         </div>
       </div>
