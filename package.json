@@ -2,7 +2,7 @@
   "name": "salty-desk",
   "private": true,
   "type": "module",
-  "description": "Salty Desk — Salty & Clever host & dine intelligence storefront · TanStack Start · Nitro Fluid · CONFIG_VERSION nitro-fluid-v1.1",
+  "description": "Salty Desk — Salty & Clever host & dine intelligence storefront · TanStack Start · Nitro Fluid · CONFIG_VERSION nitro-fluid-v1.2.1",
   "scripts": {
     "dev": "vite dev --host 0.0.0.0 --port 8080",
     "build": "node scripts/vercel-build.mjs",

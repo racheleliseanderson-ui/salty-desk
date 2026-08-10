@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { nitro } from "nitro/vite";
 
 /**
- * Salty Desk — CONFIG_VERSION: nitro-fluid-v1.1
+ * Salty Desk — CONFIG_VERSION: nitro-fluid-v1.2.1
  * TanStack Start + Nitro Vercel Fluid
  * - Dev: single port 0.0.0.0:8080 (nitro NOT loaded)
  * - Prod: nitro({ preset: "vercel" }) only on build

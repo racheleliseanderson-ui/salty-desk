@@ -1,6 +1,6 @@
 /**
  * GET /api/version — deploy/config identity (no-store).
- * CONFIG_VERSION: nitro-fluid-v1.1
+ * CONFIG_VERSION: nitro-fluid-v1.2.1
  */
 import { defineEventHandler, setHeader } from "h3";
 
@@ -10,7 +10,7 @@ export default defineEventHandler((event) => {
   return {
     service: "salty-desk",
     version: "1.0.0",
-    configVersion: "nitro-fluid-v1.1",
+    configVersion: "nitro-fluid-v1.2.1",
     stack: "tanstack-start/nitro-vercel-fluid",
     features: {
       fluid: true,

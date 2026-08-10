@@ -1,6 +1,6 @@
 /**
  * Thin wrapper over Nitro useStorage("cache").
- * CONFIG_VERSION: nitro-fluid-v1.1
+ * CONFIG_VERSION: nitro-fluid-v1.2.1
  * Nitro 3: explicit imports.
  */
 import { useStorage } from "nitro/storage";

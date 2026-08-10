@@ -1,6 +1,6 @@
 # Salty Desk deploy config
 
-**CONFIG_VERSION:** `nitro-fluid-v1.1`
+**CONFIG_VERSION:** `nitro-fluid-v1.2.1`
 
 ## Layers
 
@@ -21,7 +21,7 @@
 
 ## Changelog
 
-### nitro-fluid-v1.1
+### nitro-fluid-v1.2.1
 
 - Fluid + region pin
 - Security headers (preserve saltnotes.blog frame-ancestors)

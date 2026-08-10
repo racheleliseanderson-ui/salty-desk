@@ -1,6 +1,6 @@
 /**
  * Explicit Vercel build entry — avoids bare `vite` on PATH (exit 127).
- * CONFIG_VERSION: nitro-fluid-v1.1
+ * CONFIG_VERSION: nitro-fluid-v1.2.1
  */
 import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
