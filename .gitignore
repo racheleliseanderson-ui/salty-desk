@@ -19,7 +19,6 @@ artifacts
 .prettierrc
 AGENTS.md
 migrations
-server
 scripts
 public/__grok
 src/components/created-with-grok-banner.tsx
