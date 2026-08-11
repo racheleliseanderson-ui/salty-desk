@@ -111,7 +111,7 @@ export const APPS: AppCard[] = [
       "Star ratings or social proof",
       "Forced accounts for core planning",
     ],
-    href: "https://occasion-operating-system-u9cd.vercel.app/plan",
+    href: "https://occasion-planner-suite.vercel.app/",
     detailsPath: "/#app-occasion-os",
     handoffContract: "SC-OOS-001 receives SC-MB-001@1.1.0",
     image: CARD_OCCASION_OS.url,

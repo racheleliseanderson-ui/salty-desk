@@ -134,7 +134,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-2">
             <span className="text-xs font-medium uppercase tracking-wider text-fg-subtle">Apps</span>
             <a href="https://salty-menu-builder.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Menu Builder</a>
-            <a href="https://occasion-operating-system-u9cd.vercel.app/plan" target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Occasion OS</a>
+            <a href="https://occasion-planner-suite.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Occasion OS</a>
             <a href="https://restaurant-intelligence-hub.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-fg">Restaurant Intelligence</a>
           </div>
         </div>
