@@ -149,7 +149,7 @@ export const APPS: AppCard[] = [
       "Live menu scraping as gospel",
       "Skipping direct confirmation on operating changes",
     ],
-    href: "https://restaurant-intelligence-hub.vercel.app/",
+    href: "https://deep-dish-decision-e3c9f8ee.vercel.app/",
     detailsPath: "/#app-restaurant-intelligence",
     image: CARD_RESTAURANT_INTELLIGENCE.url,
     imageAlt: CARD_RESTAURANT_INTELLIGENCE.alt,
