@@ -1,7 +1,6 @@
 /** Canonical Salty & Clever fleet catalog — storefront source of truth. */
 
 import {
-  CARD_MENU_BUILDER,
   CARD_OCCASION_OS,
   CARD_RESTAURANT_INTELLIGENCE,
 } from "@/data/media";
@@ -12,7 +11,7 @@ export const STOREFRONT = {
   attitude: "Vanity or Vice",
   tagline: "Host & dine intelligence storefront",
   description:
-    "Reader-job-first cards for Salty & Clever tools. Stress-test the menu you can host, plan the night without theater, rank restaurants with unknowns still visible — then carry results only when you choose.",
+    "Reader-job-first cards for Salty & Clever tools. Plan the night you can actually host, rank restaurants with unknowns still visible — then carry results only when you choose.",
   constraints:
     "Educational planning only · first-party evidence · explicit handoffs · no allergen safety guarantees",
   blog: "https://saltnotes.blog",
@@ -42,66 +41,28 @@ export type AppCard = {
 
 export const APPS: AppCard[] = [
   {
-    id: "menu-builder",
-    code: "SC-MB-001",
-    name: "Menu Builder",
-    tagline: "Build the menu your kitchen can actually pull off",
-    suite: "host",
-    status: "Ready",
-    badges: ["Deterministic engine", "Anchor lock", "Local-first"],
-    description:
-      "Five-role architecture, stress meters, anchor locking, simplification, and hard stops. Scores Balance, Make Ahead, Service Fit, Equipment Fit, and Host Freedom from your declared inputs — then hands a clean packet to Occasion OS.",
-    intelligence: [
-      "Five roles + congruence / contrast / balanced pairing modes",
-      "Operational stress test with hard stops (allergen boundary, plated capacity)",
-      "Anchor re-scoring when you lock a dish",
-      "Bounded budget-pressure simplification (additive, non-formula-breaking)",
-      "Portable JSON export + local history (v2 input / v1 history keys)",
-      "Handoff contract 1.1.0 → Occasion OS (postMessage + opener)",
-    ],
-    population: [
-      { label: "Engine", value: "0.4.3" },
-      { label: "Package", value: "0.5.0" },
-      { label: "Contract", value: "1.1.0" },
-      { label: "Roles", value: "5" },
-      { label: "Stress axes", value: "5" },
-      { label: "Storage", value: "Browser only" },
-    ],
-    doesNot: [
-      "AI menu generation",
-      "Allergen safety or cross-contact control",
-      "Recipes, pricing, or nutrition advice",
-      "Accounts or cloud sync",
-    ],
-    href: "https://salty-menu-builder.vercel.app/",
-    detailsPath: "/#app-menu-builder",
-    handoffContract: "SC-MB-001 → SC-OOS-001@1.1.0",
-    image: CARD_MENU_BUILDER.url,
-    imageAlt: CARD_MENU_BUILDER.alt,
-  },
-  {
     id: "occasion-os",
     code: "SC-OOS-001",
     name: "Occasion Operating System",
     tagline: "Plan the night you can actually host",
     suite: "host",
     status: "Ready",
-    badges: ["Host plan", "Service route", "Food-safety boundary"],
+    badges: ["Host plan", "Architecture", "Service route"],
     description:
-      "Set conditions, build a controlled hosting route, then shop, prep, and serve from one plan. Receives Menu Builder packets, keeps dietary categories as planning filters (never allergy guarantees), and stays on the same Vanity-or-Vice brand system as the rest of the desk.",
+      "Four layers in one visual system: Plan (feasibility, shopping, prep clock, service), Architecture (five-role menu builder, stress meters, anchor lock), Card (printable guest card), and Library. Dietary categories stay planning filters — never allergy guarantees.",
     intelligence: [
       "Condition-driven host plan (guests, service style, attention, capacity)",
+      "Architecture layer: five roles, stress test, lock-an-anchor, service plan",
       "Controlled route: shop → prep → serve without theater",
-      "Menu Builder handoff receiver (contract 1.1.0)",
       "Food-safety boundary surfaced on every plan",
-      "Shared fleet a11y prefs + print-friendly plan views",
+      "Printable guest card + dish library workshop",
       "Cross-links into Restaurant Intelligence when dining out wins",
     ],
     population: [
-      { label: "Build", value: "1.8.0-intel" },
+      { label: "Layers", value: "4" },
       { label: "Modes", value: "Host + Dine" },
-      { label: "Handoff in", value: "Menu Builder" },
-      { label: "Handoff out", value: "RI compare" },
+      { label: "Roles", value: "5" },
+      { label: "Situations", value: "11+" },
       { label: "Boundary", value: "Dietary ≠ allergy-safe" },
       { label: "Storage", value: "Local + plan state" },
     ],
@@ -111,9 +72,8 @@ export const APPS: AppCard[] = [
       "Star ratings or social proof",
       "Forced accounts for core planning",
     ],
-    href: "https://occasion-planner-suite.vercel.app/",
+    href: "https://occasion.saltnotes.blog/",
     detailsPath: "/#app-occasion-os",
-    handoffContract: "SC-OOS-001 receives SC-MB-001@1.1.0",
     image: CARD_OCCASION_OS.url,
     imageAlt: CARD_OCCASION_OS.alt,
   },
@@ -162,7 +122,7 @@ export const SUITES = [
     label: "Host Decision Suite",
     title: "Before you commit the kitchen",
     blurb:
-      "Architecture the menu, stress-test service, then run the night from one host plan — vanity without the collapse, vice without the chaos.",
+      "Architecture the menu inside Occasion OS, stress-test service, then run the night from one host plan — vanity without the collapse, vice without the chaos.",
   },
   {
     id: "dine" as const,
@@ -176,20 +136,13 @@ export const SUITES = [
 export const HOST_PATH = [
   {
     step: 1,
-    title: "Menu architecture",
-    appId: "menu-builder",
+    title: "Host plan + menu architecture",
+    appId: "occasion-os",
     summary:
-      "Declare occasion, guests, service, host attention, and equipment. Lock an anchor if the table needs one. Simplify what will break.",
+      "Declare occasion, guests, service, equipment, and dietary filters. Use Architecture for five-role menu building and stress meters, then Plan for shop → prep → serve.",
   },
   {
     step: 2,
-    title: "Host plan",
-    appId: "occasion-os",
-    summary:
-      "Carry the Menu Builder packet into Occasion OS. Build the shop → prep → serve route you can actually host.",
-  },
-  {
-    step: 3,
     title: "Or dine out",
     appId: "restaurant-intelligence",
     summary:
@@ -198,15 +151,6 @@ export const HOST_PATH = [
 ] as const;
 
 export const HANDOFFS = [
-  {
-    from: "Menu Builder",
-    fromCode: "SC-MB-001",
-    to: "Occasion OS",
-    toCode: "SC-OOS-001",
-    packet: "Menu architecture + stress summary + anchor (contract 1.1.0)",
-    mode: "Explicit postMessage / opener handoff",
-    optional: false,
-  },
   {
     from: "Occasion OS",
     fromCode: "SC-OOS-001",
@@ -228,11 +172,11 @@ export const HANDOFFS = [
 ] as const;
 
 export const FLEET_STATS = [
-  { label: "Live apps", value: "3", note: "Equal intelligence depth" },
-  { label: "Handoff contracts", value: "1.1.0", note: "Menu → Occasion" },
+  { label: "Live apps", value: "2", note: "Equal intelligence depth" },
+  { label: "OOS layers", value: "4", note: "Plan · Architecture · Card · Library" },
   { label: "RI case files", value: "41+", note: "First-party only" },
   { label: "Regions covered", value: "26+", note: "Expanding archive" },
-  { label: "Stress axes", value: "5", note: "Menu Builder" },
+  { label: "Architecture roles", value: "5", note: "Inside Occasion OS" },
   { label: "Booking pathways", value: "6", note: "Phone → Direct" },
 ] as const;
 

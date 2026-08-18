@@ -136,8 +136,9 @@ export function DeskHome() {
                 Host Path sequence
               </h2>
               <p className="mt-2 max-w-xl text-sm text-fg-muted">
-                Menu Builder → Occasion OS → Restaurant Intelligence when dining wins. Tools
-                stay independent — this path sequences the most common host workflow.
+                Occasion OS (Plan + Architecture) → Restaurant Intelligence when dining
+                wins. Tools stay independent — this path sequences the most common host
+                workflow.
               </p>
             </div>
             <Link
@@ -148,7 +149,7 @@ export function DeskHome() {
               <ArrowRight className="size-4 fleet-arrow-right" />
             </Link>
           </div>
-          <ol className="fleet-stagger mt-8 grid gap-4 sm:grid-cols-3">
+          <ol className="fleet-stagger mt-8 grid gap-4 sm:grid-cols-2">
             {HOST_PATH.map((step) => {
               const app = appById(step.appId);
               return (

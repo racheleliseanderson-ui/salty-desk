@@ -11,7 +11,7 @@ export const Route = createFileRoute("/host-path")({
       {
         name: "description",
         content:
-          "Guided sequence: Menu Builder → Occasion OS → Restaurant Intelligence. Explicit handoffs only.",
+          "Guided sequence: Occasion Operating System → Restaurant Intelligence when dining out. Explicit handoffs only.",
       },
     ],
   }),
@@ -34,9 +34,9 @@ function HostPathPage() {
         Host Path
       </h1>
       <p className="mt-3 max-w-2xl text-base leading-relaxed text-fg-muted">
-        Three tools, in order when hosting is the job. Each step produces a packet you can
-        choose to carry forward — nothing moves until you do. Dining out is an intentional
-        exit, not a failure of the path.
+        Occasion OS for the night you can actually host — Plan plus Architecture inside one
+        instrument. Dining out is an intentional exit via Restaurant Intelligence, not a failure
+        of the path. Nothing moves between tools until you choose.
       </p>
 
       <ol className="mt-10 space-y-4">

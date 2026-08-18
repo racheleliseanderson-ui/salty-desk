@@ -21,15 +21,6 @@ export const HERO: MediaAsset = {
   usage: "hero",
 };
 
-/** Menu architecture still — notebook, timing, workload. */
-export const CARD_MENU_BUILDER: MediaAsset = {
-  id: "card-menu-builder",
-  url: "https://i0.wp.com/saltnotes.blog/wp-content/uploads/2026/07/Menu-Builder-%E2%80%94-Plan-Timing-Workload-and-Service.jpg",
-  alt: "Open notebook and kitchen planning materials for building a coherent menu",
-  credit: "Salt Notes media library",
-  usage: "card",
-};
-
 /** Host plan / occasion atmosphere. */
 export const CARD_OCCASION_OS: MediaAsset = {
   id: "card-occasion-os",
@@ -67,7 +58,6 @@ export const OG: MediaAsset = {
 
 export const MEDIA_REGISTRY: Record<string, MediaAsset> = {
   [HERO.id]: HERO,
-  [CARD_MENU_BUILDER.id]: CARD_MENU_BUILDER,
   [CARD_OCCASION_OS.id]: CARD_OCCASION_OS,
   [CARD_RESTAURANT_INTELLIGENCE.id]: CARD_RESTAURANT_INTELLIGENCE,
   [FAMILY_TABLE.id]: FAMILY_TABLE,

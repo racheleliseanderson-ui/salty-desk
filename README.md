@@ -6,9 +6,10 @@ Host & dine intelligence storefront for **Salty & Clever** — Vanity or Vice at
 
 | Code | App | URL |
 | --- | --- | --- |
-| SC-MB-001 | Menu Builder | https://salty-menu-builder.vercel.app/ |
-| SC-OOS-001 | Occasion OS | https://occasion-operating-system-u9cd.vercel.app/plan |
-| SC-RI-001 | Restaurant Intelligence | https://restaurant-intelligence-hub.vercel.app/ |
+| SC-OOS-001 | Occasion Operating System | https://occasion.saltnotes.blog/ |
+| SC-RI-001 | Restaurant Intelligence | https://deep-dish-decision-e3c9f8ee.vercel.app/ |
+
+Menu Builder (SC-MB-001) has been retired from the storefront. Its five-role engine lives inside Occasion OS as the Architecture layer.
 
 ## Stack
 

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/intelligence")({
       {
         name: "description",
         content:
-          "Fleet intelligence and data population for Menu Builder, Occasion OS, and Restaurant Intelligence — same altitude on every tool.",
+          "Fleet intelligence and data population for Occasion Operating System and Restaurant Intelligence — same altitude on every tool.",
       },
     ],
   }),
