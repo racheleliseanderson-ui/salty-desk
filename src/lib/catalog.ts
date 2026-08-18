@@ -3,6 +3,7 @@
 import {
   CARD_OCCASION_OS,
   CARD_RESTAURANT_INTELLIGENCE,
+  FAMILY_TABLE,
 } from "@/data/media";
 
 export const STOREFRONT = {
@@ -11,7 +12,7 @@ export const STOREFRONT = {
   attitude: "Vanity or Vice",
   tagline: "Host & dine intelligence storefront",
   description:
-    "Reader-job-first cards for Salty & Clever tools. Plan the night you can actually host, rank restaurants with unknowns still visible — then carry results only when you choose.",
+    "Reader-job-first cards for Salty & Clever tools. Plan the night you can actually host, decide what to make from what you have, rank restaurants with unknowns still visible — then carry results only when you choose.",
   constraints:
     "Educational planning only · first-party evidence · explicit handoffs · no allergen safety guarantees",
   blog: "https://saltnotes.blog",
@@ -25,7 +26,7 @@ export type AppCard = {
   code: string;
   name: string;
   tagline: string;
-  suite: "host" | "dine";
+  suite: "host" | "layer" | "dine";
   status: AppStatus;
   badges: string[];
   description: string;
@@ -78,6 +79,44 @@ export const APPS: AppCard[] = [
     imageAlt: CARD_OCCASION_OS.alt,
   },
   {
+    id: "kitchen-bar",
+    code: "SC-KBI-001",
+    name: "Kitchen & Bar Intelligence",
+    tagline: "What you can make from what you already have",
+    suite: "layer",
+    status: "Ready",
+    badges: ["Unified inventory", "Match + pairing", "Local-first"],
+    description:
+      "Daily execution layer for food and bar together. Local-first inventory with quantities and expiry, hierarchical match (Now / Almost / Smart Buy), hybrid molecular pairing, review-first vision, and an explicit Availability Packet handoff into Occasion OS.",
+    intelligence: [
+      "Unified food + bar inventory (quantities, location, expiry)",
+      "Hierarchical matching — any whiskey covers bourbon recipes",
+      "Hybrid pairing: molecular overlap + recipe co-occurrence",
+      "Expiry-aware ranking and Smart Buy recommendations",
+      "Review-first vision capture (confirm before truth)",
+      "Availability Packet 1.0 — user-initiated handoff only",
+    ],
+    population: [
+      { label: "Domains", value: "Food + Bar" },
+      { label: "Match bands", value: "Now · Almost · Buy" },
+      { label: "Pairing", value: "50/50 hybrid" },
+      { label: "Packet", value: "1.0" },
+      { label: "Vision", value: "Review-first" },
+      { label: "Storage", value: "Local-first" },
+    ],
+    doesNot: [
+      "Allergen safety or nutrition claims",
+      "Silent handoff into Occasion OS",
+      "Full occasion / menu generation",
+      "Invented star ratings or social proof",
+    ],
+    href: "https://salty-kitchen-bar-intelligence.vercel.app/",
+    detailsPath: "/#app-kitchen-bar",
+    handoffContract: "SC-KBI-001 → SC-OOS-001 · Availability Packet 1.0",
+    image: FAMILY_TABLE.url,
+    imageAlt: FAMILY_TABLE.alt,
+  },
+  {
     id: "restaurant-intelligence",
     code: "SC-RI-001",
     name: "Restaurant Intelligence",
@@ -125,6 +164,13 @@ export const SUITES = [
       "Architecture the menu inside Occasion OS, stress-test service, then run the night from one host plan — vanity without the collapse, vice without the chaos.",
   },
   {
+    id: "layer" as const,
+    label: "Kitchen & Bar Layer",
+    title: "Before you shop or open another bottle",
+    blurb:
+      "Know what you can actually make from the pantry and the bar — then optionally hand availability into Occasion OS when a night needs planning.",
+  },
+  {
     id: "dine" as const,
     label: "Dine Decision Suite",
     title: "Before you book the room",
@@ -152,6 +198,15 @@ export const HOST_PATH = [
 
 export const HANDOFFS = [
   {
+    from: "Kitchen & Bar Intelligence",
+    fromCode: "SC-KBI-001",
+    to: "Occasion OS",
+    toCode: "SC-OOS-001",
+    packet: "Availability Packet 1.0 (ingredients, quantity hints, expiry urgency, hard constraints)",
+    mode: "User-initiated copy / download / open",
+    optional: true,
+  },
+  {
     from: "Occasion OS",
     fromCode: "SC-OOS-001",
     to: "Restaurant Intelligence",
@@ -172,11 +227,11 @@ export const HANDOFFS = [
 ] as const;
 
 export const FLEET_STATS = [
-  { label: "Live apps", value: "2", note: "Equal intelligence depth" },
+  { label: "Live apps", value: "3", note: "Equal intelligence depth" },
   { label: "OOS layers", value: "4", note: "Plan · Architecture · Card · Library" },
+  { label: "KBI domains", value: "2", note: "Food + Bar unified" },
   { label: "RI case files", value: "41+", note: "First-party only" },
   { label: "Regions covered", value: "26+", note: "Expanding archive" },
-  { label: "Architecture roles", value: "5", note: "Inside Occasion OS" },
   { label: "Booking pathways", value: "6", note: "Phone → Direct" },
 ] as const;
 
